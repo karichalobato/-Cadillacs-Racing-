@@ -80,6 +80,46 @@ public class VentanaA extends JFrame {
             }
             
         });
+        
+        Boton_MiJuego.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaA1 nextVA1 = new VentanaA1();
+                nextVA1.setVisible(true);
+                VentanaA.this.dispose();
+            }
+            
+        });
+        
+        Boton_Instrucciones.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaB nextVB = new VentanaB();
+                nextVB.setVisible(true);
+                VentanaA.this.dispose();
+            }
+            
+        });
+        
+        Boton_Ranking.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaC nextVC = new VentanaC();
+                nextVC.setVisible(true);
+                VentanaA.this.dispose();
+            }
+            
+        });
+        
+        Boton_Creditos.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaD nextVD = new VentanaD();
+                nextVD.setVisible(true);
+                VentanaA.this.dispose();
+            }
+            
+        });
             
     
     

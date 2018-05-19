@@ -7,9 +7,11 @@ import javax.swing.JFrame;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
-
 import java.awt.Graphics;
+//import java.awt.Event;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,8 +22,6 @@ import javax.swing.JPanel;
  *
  * @author Karicha Valesska Romero Lobato <00002517@uca.edu.sv>
  */
-
-
 
 public class VentanaA extends JFrame {
     public Image imagenFondo;
@@ -54,10 +54,12 @@ public class VentanaA extends JFrame {
         //CREANDO BOTONES DE VENTANA A.
         Boton_MiJuego = new JButton ("MI JUEGO");
         Boton_MiJuego.setBounds(170, 125, 150, 50);//Colocando el boton en las cordenadas que yo deseo y el tamaño que lo deseo.
+       
         panelA.add(Boton_MiJuego);
         
         Boton_Instrucciones = new JButton ("INSTRUCCIONES");
         Boton_Instrucciones.setBounds(170, 195, 150, 50);
+        
         panelA.add(Boton_Instrucciones);
         
         Boton_Ranking = new JButton ("RANKING");
@@ -68,7 +70,19 @@ public class VentanaA extends JFrame {
         Boton_Creditos.setBounds(170, 335, 150, 50);
         panelA.add(Boton_Creditos);
         
-        
+        //CREANDO EVENTOS DE BOTONES...........
+        Boton_MiJuego.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaA1 nextVA1 = new VentanaA1();
+                nextVA1.setVisible(true);
+                VentanaA.this.dispose();
+            }
+            
+        });
+            
+    
+    
     }
     
     public JPanel panelA = new JPanel(){

@@ -1,5 +1,5 @@
 /*
- * Creando ventana A2 (ventana de instrucciones)
+ * Creando ventana A2 (ventana de TIENDA)
  */
 package cadillacs.racing;
 
@@ -27,7 +27,7 @@ public class VentanaA2 extends JFrame{
         //CREANDO ESPECIFICACIONES DE VENTANA A.
         this.setSize(500, 500);//Estableciendo tamaño de la venta A.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
-        this.setTitle("INSTRUCCIONES"); //Estableciendo titulo de la Venta A.
+        this.setTitle("TIENDA"); //Estableciendo titulo de la Venta A.
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A.

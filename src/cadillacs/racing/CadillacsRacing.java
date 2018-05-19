@@ -17,6 +17,9 @@ public class CadillacsRacing {
     public static void main(String[] args) {
         VentanaA VA = new VentanaA (); //Instanciando Objeto Ventana A.
         VA.setVisible(true);//Haciendo visible la ventana A.
+        
+        VentanaA1 VA1 = new VentanaA1 ();
+        VA1.setVisible(true);
     }
     
 }

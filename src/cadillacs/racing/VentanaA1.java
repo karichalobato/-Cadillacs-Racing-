@@ -24,14 +24,14 @@ public class VentanaA1 extends JFrame{
     public Image imagenFondo;
     public URL fondoA;
     
-    public VentanaA1 (){ //Constructor ventana A.
-        //CREANDO ESPECIFICACIONES DE VENTANA A.
-        this.setSize(500, 500);//Estableciendo tamaño de la venta A.
+    public VentanaA1 (){ //Constructor ventana A1.
+        //CREANDO ESPECIFICACIONES DE VENTANA A1.
+        this.setSize(500, 500);//Estableciendo tamaño de la venta A1.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
-        this.setTitle("MI JUEGO"); //Estableciendo titulo de la Venta A.
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A automaticamente se terminara el programa.
+        this.setTitle("MI JUEGO"); //Estableciendo titulo de la Venta A1.
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A1 automaticamente se terminara el programa.
         
-        //COLOCANDO IMAGEN DE FONDO EN VENTA A.
+        //COLOCANDO IMAGEN DE FONDO EN VENTA A1.
         fondoA = this.getClass().getResource("ImagenA.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();

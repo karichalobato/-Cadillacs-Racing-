@@ -28,7 +28,7 @@ public class VentanaD extends JFrame{
         //CREANDO ESPECIFICACIONES DE VENTANA D.
         this.setSize(500, 500);//Estableciendo tamaño de la venta D.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
-        this.setTitle("RANKING"); //Estableciendo titulo de la Venta C.
+        this.setTitle("CREDITOS"); //Estableciendo titulo de la Venta C.
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana C automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA D.

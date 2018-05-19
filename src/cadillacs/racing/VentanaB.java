@@ -23,14 +23,14 @@ public class VentanaB extends JFrame{
     public Image imagenFondo;
     public URL fondoA;
     
-    public VentanaB (){ //Constructor ventana A.
-        //CREANDO ESPECIFICACIONES DE VENTANA A.
-        this.setSize(500, 500);//Estableciendo tamaño de la venta A.
+    public VentanaB (){ //Constructor ventana B.
+        //CREANDO ESPECIFICACIONES DE VENTANA B.
+        this.setSize(500, 500);//Estableciendo tamaño de la venta B.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
-        this.setTitle("MI INSTRUCCIONES"); //Estableciendo titulo de la Venta A.
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A automaticamente se terminara el programa.
+        this.setTitle("MI INSTRUCCIONES"); //Estableciendo titulo de la Venta B.
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana B automaticamente se terminara el programa.
         
-        //COLOCANDO IMAGEN DE FONDO EN VENTA A.
+        //COLOCANDO IMAGEN DE FONDO EN VENTA B.
         fondoA = this.getClass().getResource("ImagenA.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();

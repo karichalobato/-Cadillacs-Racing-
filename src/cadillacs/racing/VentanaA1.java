@@ -92,9 +92,6 @@ public class VentanaA1 extends JFrame{
             }
             
         });
-        
-        
-
     }
     
     public JPanel panelA1 = new JPanel(){

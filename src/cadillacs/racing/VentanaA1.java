@@ -42,7 +42,7 @@ public class VentanaA1 extends JFrame{
         contenedor.add(panelA1);
         panelA1.setLayout(null);//Estamos desactivando el diseño del panel.
         
-        //CREANDO ETIQUETA DE NOMBRE DEL JUEGO.
+        //CREANDO ETIQUETA DE NOMBRE DE LA PANTALLA.
         eti_MiJuego= new JLabel("MI JUEGO");
         eti_MiJuego.setBounds(290, 10, 300, 34);
         eti_MiJuego.setForeground(Color.WHITE);

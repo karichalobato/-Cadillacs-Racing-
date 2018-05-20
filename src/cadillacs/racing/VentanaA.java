@@ -35,6 +35,7 @@ public class VentanaA extends JFrame {
         this.setSize(500, 500);//Estableciendo tamaño de la venta A.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("INICIO"); //Estableciendo titulo de la Venta A.
+        this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A.

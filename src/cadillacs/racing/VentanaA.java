@@ -74,9 +74,9 @@ public class VentanaA extends JFrame {
         Boton_MiJuego.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                VentanaA1 nextVA1 = new VentanaA1();
-                nextVA1.setVisible(true);
-                VentanaA.this.dispose();
+                VentanaA1 nextVA1 = new VentanaA1();//Donde queres que tu boton se dirija.
+                nextVA1.setVisible(true);//La haces visible
+                VentanaA.this.dispose();//Destruis la ventana en la que estas.
             }
             
         });

@@ -3,17 +3,21 @@
  */
 package cadillacs.racing;
 
+import java.awt.Color;
 import java.awt.Component;
-
+import java.awt.Container;
+import java.awt.Cursor;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -30,13 +34,12 @@ public class LogIn extends JFrame {
     public LogIn () {
          //CREANDO ESPECIFICACIONES DE VENTANA LogIn.
         initComponents ();
-        panelLogin.setLayout(null);
-        this.setSize(500, 500);//Estableciendo tamaño de la venta LogIn.
+        this.setSize(450, 325);//Estableciendo tamaño de la venta LogIn.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("LOGIN"); //Estableciendo titulo de la Venta LogIn.
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana LogIn automaticamente se terminara el programa.
-        txtUsuario.setFocusable(true);//Para que me aparezca de una vez seleccionada la txt de usuario.
+        txtUsuario.setFocusable(true);//Para que me aparezca de una vez seleccionada la txt de usuario.    
     }
     
     public void Datos (String us,String pas){ /*Este metodo nos servira de una sola vez para 
@@ -47,8 +50,6 @@ public class LogIn extends JFrame {
     }
     
     private void initComponents() {
-        
-        
         Boton_iniciar = new JButton();
         Boton_cancelar = new JButton();
         JLabel1 = new JLabel();
@@ -59,27 +60,30 @@ public class LogIn extends JFrame {
         lbl_banner = new JLabel();
         lbl_background = new JLabel();
 
-        this.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         this.setResizable(false);
         this.setUndecorated(true);
+        Container contenedor = getContentPane();
+        contenedor.setLayout(null);
         
-        
-
         Boton_iniciar.setBackground(new java.awt.Color(0, 162, 255));
         Boton_iniciar.setForeground(new java.awt.Color(255, 255, 255));
         Boton_iniciar.setText("LOGIN");
-        Boton_iniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Boton_iniciar.setBounds(60, 210, 330, 40);
+        Boton_iniciar.setCursor(new java.awt.Cursor(Cursor.DEFAULT_CURSOR));
         Boton_iniciar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Boton_iniciarActionPerformed(e);
             }
         });
-        panelLogin.add(Boton_iniciar);
-
-        Boton_cancelar.setBackground(new java.awt.Color(0, 162, 255));
-        Boton_cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        Container contenedorBtnIniciar = getContentPane();
+        contenedorBtnIniciar.add(Boton_iniciar);
+        
+        Boton_cancelar.setBackground(new Color(0, 162, 255));
+        Boton_cancelar.setForeground(new Color(255, 255, 255));
         Boton_cancelar.setText("CANCELAR");
+        Boton_cancelar.setBounds(60, 260, 330, 40);
         Boton_cancelar.addActionListener(new ActionListener() {
             
             @Override
@@ -88,37 +92,55 @@ public class LogIn extends JFrame {
             }
 
         });
-        panelLogin.add(Boton_cancelar);
-
-        JLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("iconUsuario.jpg")));
-        panelLogin.add(JLabel1);
-
-        JLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("iconContraseña.jpg"))); 
-        panelLogin.add(JLabel2);
-
-        txtUsuario.setBackground(new java.awt.Color(224, 224, 224));
+        Container contenedorBtnCancelar = getContentPane();
+        contenedorBtnCancelar.add(Boton_cancelar);
+        
+        JLabel1.setIcon(new ImageIcon(getClass().getResource("iconUsuario.jpg")));
+        JLabel1.setBounds(60, 90, -1, 40);
+        Container contenedorUsu = getContentPane();
+        contenedorUsu.add(JLabel1);
+        
+        JLabel2.setIcon(new ImageIcon(getClass().getResource("iconContraseña.jpg"))); 
+        JLabel2.setBounds(60, 140, 40, 40);
+        Container contenedorPass = getContentPane();
+        contenedorPass.add(JLabel2);
+        
+        txtUsuario.setBackground(new Color(224, 224, 224));
         txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 16)); 
-        txtUsuario.setForeground(new java.awt.Color(23, 160, 249));
-        panelLogin.add(txtUsuario);
+        txtUsuario.setForeground(new Color(23, 160, 249));
+        txtUsuario.setBounds(110, 90, 280, 40);
+        Container contenedorTxtUsu = getContentPane();
+        contenedorTxtUsu.add(txtUsuario);
 
-        txtPassword.setBackground(new java.awt.Color(224, 224, 224));
+        txtPassword.setBackground(new Color(224, 224, 224));
         txtPassword.setFont(new java.awt.Font("Tahoma", 0, 16)); 
         txtPassword.setForeground(new java.awt.Color(23, 160, 249));
-        panelLogin.add(txtPassword);
+        txtPassword.setBounds(110, 140, 280, 40);
+        Container contenedorTxtPass = getContentPane();
+        contenedorTxtPass.add(txtPassword);
 
         lbl_titulo.setFont(new java.awt.Font("Tahoma", 1, 18));
-        lbl_titulo.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_titulo.setForeground(new Color(255, 255, 255));
+        lbl_titulo.setHorizontalAlignment(SwingConstants.CENTER);
         lbl_titulo.setText("INICIAR SESIÓN");
-        panelLogin.add(lbl_titulo);
+        lbl_titulo.setBounds(150, 20, -1, -1);
+        Container contenedorLblTitu = getContentPane();
+        contenedorLblTitu.add(lbl_titulo);
 
-        lbl_banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("banner.jpg")));
-        panelLogin.add(lbl_banner);
+        lbl_banner.setHorizontalAlignment(SwingConstants.CENTER);
+        lbl_banner.setIcon(new ImageIcon(getClass().getResource("banner.jpg")));
+        lbl_banner.setBounds(0, 0, 450, 60);
+        Container contenedorBanner = getContentPane();
+        contenedorBanner.add(lbl_banner);
+        
+        
 
-        lbl_background.setBackground(new java.awt.Color(0, 204, 204));
-        lbl_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("nuevoFondo.jpg")));
-        panelLogin.add(lbl_background);
+        lbl_background.setBackground(new Color(0, 204, 204));
+        lbl_background.setIcon(new ImageIcon(getClass().getResource("nuevoFondo.jpg")));
+        lbl_background.setBounds(0, 0, 450, 340);
+        Container contenedorBackg = getContentPane();
+        contenedorBackg.add(lbl_background);
+        
 
         pack();
     }
@@ -165,8 +187,6 @@ public class LogIn extends JFrame {
         }
     }
     
-    public JPanel panelLogin = new JPanel(){
     
-    };
 }
 

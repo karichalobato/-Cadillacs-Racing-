@@ -7,6 +7,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Cursor;
+import java.awt.Font;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -106,20 +107,20 @@ public class LogIn extends JFrame {
         contenedorPass.add(JLabel2);
         
         txtUsuario.setBackground(new Color(224, 224, 224));
-        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 16)); 
-        txtUsuario.setForeground(new Color(23, 160, 249));
+        txtUsuario.setFont(new Font("Tahoma", 0, 16)); 
+        txtUsuario.setForeground( Color.GREEN);
         txtUsuario.setBounds(110, 90, 280, 40);
         Container contenedorTxtUsu = getContentPane();
         contenedorTxtUsu.add(txtUsuario);
 
         txtPassword.setBackground(new Color(224, 224, 224));
-        txtPassword.setFont(new java.awt.Font("Tahoma", 0, 16)); 
+        txtPassword.setFont(new Font("Tahoma", 0, 16)); 
         txtPassword.setForeground(new java.awt.Color(23, 160, 249));
         txtPassword.setBounds(110, 140, 280, 40);
         Container contenedorTxtPass = getContentPane();
         contenedorTxtPass.add(txtPassword);
 
-        lbl_titulo.setFont(new java.awt.Font("Tahoma", 1, 18));
+        lbl_titulo.setFont(new Font("Tahoma", 1, 18));
         lbl_titulo.setForeground(new Color(255, 255, 255));
         lbl_titulo.setHorizontalAlignment(SwingConstants.CENTER);
         lbl_titulo.setText("INICIAR SESIÓN");

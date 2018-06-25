@@ -16,15 +16,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Karicha Valesska Romero Lobato <00002517@uca.edu.sv>
  */
 public class VentanaC extends JFrame{
-    public Image imagenFondo;
-    public URL fondoA;
+    //public Image imagenFondo;
+    //public URL fondoA;
     JLabel eti_Ranking;
     JButton Boton_Inicio;
+    JTable tabla_usuarios;
+    JPanel table;
     
     public VentanaC (){ //Constructor ventana C.
         //CREANDO ESPECIFICACIONES DE VENTANA C.
@@ -33,13 +38,15 @@ public class VentanaC extends JFrame{
         this.setTitle("RANKING"); //Estableciendo titulo de la Venta C.
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana C automaticamente se terminara el programa.
-        
+        this.setLayout(null);
         //COLOCANDO IMAGEN DE FONDO EN VENTA C.
-        fondoA = this.getClass().getResource("ImagenA.jpg");
-        imagenFondo = new ImageIcon(fondoA).getImage();
+        //fondoA = this.getClass().getResource("ImagenA.jpg");
+        //imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
+        //AGREGANDO COMPONENTES A LA PANTALLA
         contenedor.add(panelC);
-        panelC.setLayout(null);//Estamos desactivando el diseño del panel.
+        contenedor.add(table);
+        //panelC.setLayout(null);//Estamos desactivando el diseño del panel.
         
         //CREANDO ETIQUETA DE NOMBRE DE PANTALLA.
         eti_Ranking = new JLabel("Ranking");
@@ -47,6 +54,11 @@ public class VentanaC extends JFrame{
         eti_Ranking.setForeground(Color.WHITE);
         eti_Ranking.setFont( new Font( "Bookman old style", Font.BOLD, 26 ) );
         panelC.add(eti_Ranking);
+        
+        tabla_usuarios = new JTable();
+        table = new JPanel();
+        table.setBounds(100, 250, 600, 200);
+        table.add(new JScrollPane(tabla_usuarios));
         
         //CREANDO BOTONES DE VENTANA C.
         Boton_Inicio = new JButton ("INICIO");
@@ -69,9 +81,9 @@ public class VentanaC extends JFrame{
     
     public JPanel panelC = new JPanel(){
         
-        public void paintComponent(Graphics g){
-            g.drawImage(imagenFondo,0,0,getWidth(),getHeight(),this);
-        }
+        //public void paintComponent(Graphics g){
+        //    g.drawImage(imagenFondo,0,0,getWidth(),getHeight(),this);
+        //}
     };
     
     

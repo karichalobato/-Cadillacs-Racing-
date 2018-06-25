@@ -3,6 +3,8 @@
  */
 package usuarios;
 
+import cadillacs.racing.VentanaA;
+import cadillacs.racing.VentanaC;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -40,9 +42,9 @@ public class Usuarios extends JFrame {
     Statement stmt = null;
     public Image imagenFondo;
     public URL fondoUsuarios;
-    JLabel lbl_fondoUsuarios,lblnombre,lblpassword,lblnickname;
-    JButton btnAceptar,btnLogIn;
-    JTextField txtnombre,txtnickname;
+    JLabel lbl_fondoUsuarios,lblnombre,lblpassword,lblnickname,lblID;
+    JButton btnAceptar,btnInicio;
+    JTextField txtnombre,txtnickname,txtID;
     JPasswordField txtpassword;
     
     public Usuarios (){ //Constructor clase Usuarios
@@ -74,9 +76,20 @@ public class Usuarios extends JFrame {
         });
         panelUsuarios.add(btnAceptar);
         
-        btnLogIn = new JButton ("LogIn");
-        btnLogIn.setBounds(90, 510, 125, 40);
-        panelUsuarios.add(btnLogIn);
+        btnInicio = new JButton ("INICIO");
+        btnInicio.setBounds(90, 510, 125, 40);
+        panelUsuarios.add(btnInicio);
+        
+        //CON ESTE EVENTO, EL BOTON INICIO NOS CONDUCIRA A LA PANATALLA INICIO O "MENU" DE NUESTRO JUEGO.
+        btnInicio.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VentanaA nextVA = new VentanaA();
+                nextVA.setVisible(true);
+                Usuarios.this.dispose();
+            }
+            
+        });
         
         //ETIQUETAS DE LA VENTANA DE REGISTRO DE USUARIO
         lblnombre = new JLabel("Nombre: ");
@@ -96,6 +109,12 @@ public class Usuarios extends JFrame {
         lblpassword.setForeground(Color.BLACK);
         lblpassword.setFont(new Font("Tahoma", 0, 20)); 
         panelUsuarios.add(lblpassword);
+        
+        lblID = new JLabel("ID: ");
+        lblID.setBounds(60, 50, 50, 20);
+        lblID.setForeground(Color.BLACK);
+        lblID.setFont(new Font("Tahoma", 0, 20)); 
+        panelUsuarios.add(lblID);
         
         //CAMPOS A LLENAR DEL RESGISTRO DE USUARIO
         txtnombre = new JTextField();
@@ -126,6 +145,13 @@ public class Usuarios extends JFrame {
         txtpassword.setForeground(Color.WHITE);
         txtpassword.setBounds(165, 430, 200, 20);
         panelUsuarios.add(txtpassword);
+        
+        txtID = new JTextField();
+        txtID.setBackground(Color.DARK_GRAY);
+        txtID.setFont(new Font("Tahoma", 0, 20)); 
+        txtID.setForeground(Color.WHITE);
+        txtID.setBounds(100, 50, 50, 20);
+        panelUsuarios.add(txtID);
         
     }
     

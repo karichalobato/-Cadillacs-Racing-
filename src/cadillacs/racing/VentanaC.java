@@ -14,59 +14,120 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 /**
  *
  * @author Karicha Valesska Romero Lobato <00002517@uca.edu.sv>
  */
 public class VentanaC extends JFrame{
-    //public Image imagenFondo;
-    //public URL fondoA;
-    JLabel eti_Ranking;
-    JButton Boton_Inicio;
-    JTable tabla_usuarios;
-    JPanel table;
     
-    public VentanaC (){ //Constructor ventana C.
-        //CREANDO ESPECIFICACIONES DE VENTANA C.
-        this.setSize(700, 500);//Estableciendo tamaño de la venta C.
-        this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
-        this.setTitle("RANKING"); //Estableciendo titulo de la Venta C.
-        this.setResizable(false);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana C automaticamente se terminara el programa.
-        this.setLayout(null);
-        //COLOCANDO IMAGEN DE FONDO EN VENTA C.
-        //fondoA = this.getClass().getResource("ImagenA.jpg");
-        //imagenFondo = new ImageIcon(fondoA).getImage();
-        Container contenedor = getContentPane();
-        //AGREGANDO COMPONENTES A LA PANTALLA
-        contenedor.add(panelC);
-        contenedor.add(table);
-        //panelC.setLayout(null);//Estamos desactivando el diseño del panel.
+    public JLabel lblRanking;
+    public JButton btnInicio;
+    public JTable tabla_usuarios;
+    public JPanel table;
+    
+   Connection con = null;
+   Statement stmt = null;
+   String titulos[] = {"id","Nombre","Nickname","Password"};
+   String fila[] = new String [4];
+
+    
+    DefaultTableModel modelo;
+
+    public VentanaC() {
+        super("Ranking");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocation(270,125);
+        setResizable(false);
+        setLayout(null);
+        agregarLabels();
+        formulario();
+        Container container = getContentPane();
+        //AGREGANDO TODOS LOS COMPONENTES A LA PANTALLA
+        //JLABELS
+        container.add(lblRanking);
+        //JBUTTONS
+        container.add(btnInicio);
+        setSize(900, 600);
+        Eventos();
+        try {
+            
+            String url = "jdbc:mysql://localhost:3306/registrousuarios";
+            String usuario = "root";
+            String contraseña = "chatamaria";  
+            
+               Class.forName("com.mysql.jdbc.Driver").newInstance();
+               con = DriverManager.getConnection(url,usuario,contraseña);
+               if (con!= null)
+                   System.out.println("Se ha establecido una conexion a la base de datos"+"\n"+url);
+               
+               stmt = con.createStatement();
+               ResultSet rs = stmt.executeQuery("select* from usuarios");
+               
+               modelo = new DefaultTableModel(null,titulos);
+            
+               while(rs.next()) {
+                   
+                   fila[0] = rs.getString("id");
+                   fila[1] = rs.getString("nombre");
+                   fila[2] = rs.getString("nickname");
+                   fila[3] = rs.getString("pass");
+                   
+                   modelo.addRow(fila);     
+               }
+                tabla_usuarios.setModel(modelo);
+                TableColumn ci = tabla_usuarios.getColumn("id");
+                ci.setMaxWidth(25);
+                TableColumn cn = tabla_usuarios.getColumn("Nombre");
+                cn.setMaxWidth(165);               
+                TableColumn cnick = tabla_usuarios.getColumn("Nickname");
+                cnick.setMaxWidth(72);
+                TableColumn cp = tabla_usuarios.getColumn("Password");
+                cp.setMaxWidth(72);
+                
+               
+        }
+        catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null,"Error al extraer los datos de la tabla");
+        }
+
+       
+
+    }
+    
+    public final void agregarLabels(){
+        lblRanking = new JLabel("Ranking");
+        lblRanking.setForeground(Color.BLACK);
+        lblRanking.setFont(new Font("Tahoma", 0, 20)); 
+        lblRanking.setBounds(375, 20, 100, 20);
+    }
+    
+    public final void formulario(){
+        //JBUTTONS
+        btnInicio = new JButton("Inicio");
+        btnInicio.setBounds(25, 500, 90, 30);
         
-        //CREANDO ETIQUETA DE NOMBRE DE PANTALLA.
-        eti_Ranking = new JLabel("Ranking");
-        eti_Ranking.setBounds(280, 10, 300, 34);
-        eti_Ranking.setForeground(Color.WHITE);
-        eti_Ranking.setFont( new Font( "Bookman old style", Font.BOLD, 26 ) );
-        panelC.add(eti_Ranking);
-        
-        tabla_usuarios = new JTable();
+        //JTABLE
         table = new JPanel();
+        tabla_usuarios = new JTable();
         table.setBounds(100, 250, 600, 200);
         table.add(new JScrollPane(tabla_usuarios));
-        
-        //CREANDO BOTONES DE VENTANA C.
-        Boton_Inicio = new JButton ("INICIO");
-        Boton_Inicio.setBounds(575, 425, 100, 25);
-        panelC.add(Boton_Inicio);
-        
-        //CREANDO EVENTOS DE BOTONES...........
-        Boton_Inicio.addActionListener(new ActionListener(){
+    }
+    
+    public void Eventos(){
+        //EVENTO DEL BOTON INICIO QUE ME CONDUCIRA AL MENU DEL VIDEO JUEGO
+        btnInicio.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 VentanaA nextVA = new VentanaA();
@@ -75,16 +136,7 @@ public class VentanaC extends JFrame{
             }
             
         });
-        
-        
     }
     
-    public JPanel panelC = new JPanel(){
-        
-        //public void paintComponent(Graphics g){
-        //    g.drawImage(imagenFondo,0,0,getWidth(),getHeight(),this);
-        //}
-    };
-    
-    
+     
 }

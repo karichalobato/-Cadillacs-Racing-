@@ -62,7 +62,7 @@ public class VentanaC extends JFrame{
         Eventos();
         try {
             
-            String url = "jdbc:mysql://localhost:3306/registrousuarios";
+            String url = "jdbc:mysql://localhost:3306/bdusuarios";
             String usuario = "root";
             String contraseña = "chatamaria";  
             
@@ -72,7 +72,7 @@ public class VentanaC extends JFrame{
                    System.out.println("Se ha establecido una conexion a la base de datos"+"\n"+url);
                
                stmt = con.createStatement();
-               ResultSet rs = stmt.executeQuery("select* from usuarios");
+               ResultSet rs = stmt.executeQuery("select* from registroUsuarios");
                
                modelo = new DefaultTableModel(null,titulos);
             

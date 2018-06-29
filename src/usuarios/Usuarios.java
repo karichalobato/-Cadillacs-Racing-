@@ -174,7 +174,7 @@ public class Usuarios extends JFrame {
         else {
         try {
            
-            String url = "jdbc:mysql://localhost:3306/registrousuarios";
+            String url = "jdbc:mysql://localhost:3306/bdusuarios";
             String usuario = "root";
             String contraseña = "chatamaria";
             
@@ -185,7 +185,7 @@ public class Usuarios extends JFrame {
                                        "\n " + url ); 
   
                   stmt = con.createStatement(); 
-                  stmt.executeUpdate("INSERT INTO usuarios VALUES('" + 0 + "','"+cadena2+"','"+cadena3+"','"+cadena4+"')");
+                  stmt.executeUpdate("INSERT INTO registroUsuarios VALUES('" + 0 + "','"+cadena2+"','"+cadena3+"','"+cadena4+"')");
                 
 
                   System.out.println("Los valores han sido agregados a la base de datos ");

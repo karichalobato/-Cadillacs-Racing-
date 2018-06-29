@@ -38,7 +38,7 @@ public class VentanaC extends JFrame{
     
    Connection con = null;
    Statement stmt = null;
-   String titulos[] = {"id","Nombre","Nickname","Password"};
+   String titulos[] = {"idusuario","nombre","nickname","pass"};
    String fila[] = new String [4];
 
     
@@ -62,7 +62,7 @@ public class VentanaC extends JFrame{
         Eventos();
         try {
             
-            String url = "jdbc:mysql://localhost:3306/bdusuarios";
+            String url = "jdbc:mysql://localhost:3306/registrousuarios";
             String usuario = "root";
             String contraseña = "chatamaria";  
             
@@ -72,13 +72,13 @@ public class VentanaC extends JFrame{
                    System.out.println("Se ha establecido una conexion a la base de datos"+"\n"+url);
                
                stmt = con.createStatement();
-               ResultSet rs = stmt.executeQuery("select* from registroUsuarios");
+               ResultSet rs = stmt.executeQuery("SELECT*FROM usuario");
                
                modelo = new DefaultTableModel(null,titulos);
             
                while(rs.next()) {
                    
-                   fila[0] = rs.getString("id");
+                   fila[0] = rs.getString("idusario");
                    fila[1] = rs.getString("nombre");
                    fila[2] = rs.getString("nickname");
                    fila[3] = rs.getString("pass");
@@ -86,13 +86,13 @@ public class VentanaC extends JFrame{
                    modelo.addRow(fila);     
                }
                 tabla_usuarios.setModel(modelo);
-                TableColumn ci = tabla_usuarios.getColumn("id");
+                TableColumn ci = tabla_usuarios.getColumn("idusuario");
                 ci.setMaxWidth(25);
-                TableColumn cn = tabla_usuarios.getColumn("Nombre");
+                TableColumn cn = tabla_usuarios.getColumn("nombre");
                 cn.setMaxWidth(165);               
-                TableColumn cnick = tabla_usuarios.getColumn("Nickname");
+                TableColumn cnick = tabla_usuarios.getColumn("nickname");
                 cnick.setMaxWidth(72);
-                TableColumn cp = tabla_usuarios.getColumn("Password");
+                TableColumn cp = tabla_usuarios.getColumn("pass");
                 cp.setMaxWidth(72);
                 
                

@@ -4,7 +4,7 @@
 package usuarios;
 
 import cadillacs.racing.VentanaA;
-import cadillacs.racing.VentanaC;
+//import cadillacs.racing.VentanaC;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -64,8 +64,11 @@ public class Usuarios extends JFrame {
         panelUsuarios.setLayout(null);//Estamos desactivando el diseño del panel.
         
         //CREANDO BOTONES DE VENTANA REGISTRO DE USUARIOS.
-        btnAceptar = new JButton ("ACEPTAR");
+        btnAceptar = new JButton ("Aceptar");
         btnAceptar.setBounds(300, 510, 125, 40);
+        btnAceptar.setForeground(Color.BLACK);
+        btnAceptar.setBackground(Color.LIGHT_GRAY);
+        btnAceptar.setFont(new Font("Times New Roman bold",0,16));
         btnAceptar.addActionListener(new ActionListener() {
             
             @Override
@@ -76,8 +79,11 @@ public class Usuarios extends JFrame {
         });
         panelUsuarios.add(btnAceptar);
         
-        btnInicio = new JButton ("INICIO");
+        btnInicio = new JButton ("Inicio");
         btnInicio.setBounds(90, 510, 125, 40);
+        btnInicio.setBackground(Color.LIGHT_GRAY);
+        btnInicio.setForeground(Color.BLACK);
+        btnInicio.setFont(new Font("Times New Roman bold",0,16));
         panelUsuarios.add(btnInicio);
         
         //CON ESTE EVENTO, EL BOTON INICIO NOS CONDUCIRA A LA PANATALLA INICIO O "MENU" DE NUESTRO JUEGO.
@@ -95,31 +101,31 @@ public class Usuarios extends JFrame {
         lblnombre = new JLabel("Nombre: ");
         lblnombre.setBounds(60, 310, 100, 20);
         lblnombre.setForeground(Color.BLACK);
-        lblnombre.setFont(new Font("Tahoma", 0, 20)); 
+        lblnombre.setFont(new Font("Times New Roman bold", 0, 20)); 
         panelUsuarios.add(lblnombre);
         
         lblnickname = new JLabel("Nickname: ");
         lblnickname.setBounds(60, 370, 100, 20);
         lblnickname.setForeground(Color.BLACK);
-        lblnickname.setFont(new Font("Tahoma", 0, 20)); 
+        lblnickname.setFont(new Font("Times New Roman bold", 0, 20)); 
         panelUsuarios.add(lblnickname);
         
         lblpassword = new JLabel("Password: ");
         lblpassword.setBounds(60, 430, 100, 20);
         lblpassword.setForeground(Color.BLACK);
-        lblpassword.setFont(new Font("Tahoma", 0, 20)); 
+        lblpassword.setFont(new Font("Times New Roman bold", 0, 20)); 
         panelUsuarios.add(lblpassword);
-        
+        /*
         lblID = new JLabel("ID: ");
         lblID.setBounds(60, 50, 50, 20);
         lblID.setForeground(Color.BLACK);
         lblID.setFont(new Font("Tahoma", 0, 20)); 
-        panelUsuarios.add(lblID);
+        panelUsuarios.add(lblID);*/
         
         //CAMPOS A LLENAR DEL RESGISTRO DE USUARIO
         txtnombre = new JTextField();
         txtnombre.setBackground(Color.BLACK);
-        txtnombre.setFont(new Font("Tahoma", 0, 20)); 
+        txtnombre.setFont(new Font("Times New Roman bold", 0, 20)); 
         txtnombre.setForeground(Color.WHITE);
         txtnombre.setBounds(165, 310, 200, 20);      
         /*
@@ -134,24 +140,24 @@ public class Usuarios extends JFrame {
         
         txtnickname = new JTextField();
         txtnickname.setBackground(Color.BLACK);
-        txtnickname.setFont(new Font("Tahoma", 0, 20)); 
+        txtnickname.setFont(new Font("Times New Roman bold", 0, 20)); 
         txtnickname.setForeground(Color.WHITE);
         txtnickname.setBounds(165, 370, 200, 20);
         panelUsuarios.add(txtnickname);
         
         txtpassword = new JPasswordField();
         txtpassword.setBackground(Color.BLACK);
-        txtpassword.setFont(new Font("Tahoma", 0, 20)); 
+        txtpassword.setFont(new Font("Times New Roman bold", 0, 20)); 
         txtpassword.setForeground(Color.WHITE);
         txtpassword.setBounds(165, 430, 200, 20);
         panelUsuarios.add(txtpassword);
-        
+        /*
         txtID = new JTextField();
         txtID.setBackground(Color.DARK_GRAY);
         txtID.setFont(new Font("Tahoma", 0, 20)); 
         txtID.setForeground(Color.WHITE);
         txtID.setBounds(100, 50, 50, 20);
-        panelUsuarios.add(txtID);
+        panelUsuarios.add(txtID);*/
         
     }
     

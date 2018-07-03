@@ -23,8 +23,10 @@ public class CadillacsRacing {
         //VA.setVisible(true);//Haciendo visible la ventana A.
         //LogIn login = new LogIn ();
         //login.setVisible(true);
-        Usuarios usuarios = new Usuarios ();
-        usuarios.setVisible(true);
+        //Usuarios usuarios = new Usuarios ();
+        //usuarios.setVisible(true);
+        Logo logo = new Logo();
+        logo.setVisible(true);
     }
     
 }

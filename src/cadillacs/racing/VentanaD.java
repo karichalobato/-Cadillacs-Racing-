@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static javax.swing.BorderFactory.createRaisedBevelBorder;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -36,7 +37,7 @@ public class VentanaD extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana C automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA D.
-        fondoA = this.getClass().getResource("ImagenA.jpg");
+        fondoA = this.getClass().getResource("Fondo.png");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelD);
@@ -44,14 +45,18 @@ public class VentanaD extends JFrame{
         
         //CREANDO ETIQUETA DE NOMBRE DE LA PANTALLA.
         eti_Creditos = new JLabel("Creditos");
-        eti_Creditos.setBounds(185, 10, 300, 34);
+        eti_Creditos.setBounds(145, 25, 300, 40);
         eti_Creditos.setForeground(Color.WHITE);
-        eti_Creditos.setFont( new Font( "Bookman old style", Font.BOLD, 26 ) );
+        eti_Creditos.setFont( new Font( "Cooper Black", Font.BOLD, 40 ) );
         panelD.add(eti_Creditos);
         
         //CREANDO BOTONES DE VENTANA D.
-        Boton_Inicio = new JButton ("INICIO");
-        Boton_Inicio.setBounds(370, 425, 100, 25);
+        Boton_Inicio = new JButton ("Inicio");
+        Boton_Inicio.setBounds(370, 425, 105, 40);
+        Boton_Inicio.setBackground(Color.GREEN);
+        Boton_Inicio.setForeground(Color.BLACK);
+        Boton_Inicio.setFont(new Font("Cooper black",0,16));  
+        Boton_Inicio.setBorder(createRaisedBevelBorder());
         panelD.add(Boton_Inicio);
         
         //CREANDO EVENTOS DE BOTONES...........

@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
+import static javax.swing.BorderFactory.createRaisedBevelBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -38,7 +39,7 @@ public class VentanaA extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A.
-        fondoA = this.getClass().getResource("ImagenA.jpg");
+        fondoA = this.getClass().getResource("Fondo.png");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelA);
@@ -46,28 +47,42 @@ public class VentanaA extends JFrame {
         
         //CREANDO ETIQUETA DE NOMBRE DEL JUEGO.
         eti_CadillacsRacing= new JLabel("Cadillacs Racing");
-        eti_CadillacsRacing.setBounds(125, 10, 300, 34);
+        eti_CadillacsRacing.setBounds(80, 40, 375, 40);
         eti_CadillacsRacing.setForeground(Color.WHITE);
-        eti_CadillacsRacing.setFont( new Font( "Bookman old style", Font.BOLD, 26 ) );
+        eti_CadillacsRacing.setFont( new Font( "Cooper Black", Font.BOLD, 40 ) );
         panelA.add(eti_CadillacsRacing);
         
         //CREANDO BOTONES DE VENTANA A.
-        Boton_MiJuego = new JButton ("MI JUEGO");
-        Boton_MiJuego.setBounds(170, 125, 150, 50);//Colocando el boton en las cordenadas que yo deseo y el tamaño que lo deseo.
-       
+        Boton_MiJuego = new JButton ("Mi juego");
+        Boton_MiJuego.setBounds(170, 125, 150, 50);
+        Boton_MiJuego.setBackground(Color.BLUE);
+        Boton_MiJuego.setForeground(Color.BLACK);
+        Boton_MiJuego.setFont(new Font("Cooper black",0,16));  
+        Boton_MiJuego.setBorder(createRaisedBevelBorder());
         panelA.add(Boton_MiJuego);
         
-        Boton_Instrucciones = new JButton ("INSTRUCCIONES");
+        Boton_Instrucciones = new JButton ("Instrucciones");
         Boton_Instrucciones.setBounds(170, 195, 150, 50);
-        
+        Boton_Instrucciones.setBackground(Color.BLUE);
+        Boton_Instrucciones.setForeground(Color.BLACK);
+        Boton_Instrucciones.setFont(new Font("Cooper black",0,16));  
+        Boton_Instrucciones.setBorder(createRaisedBevelBorder());
         panelA.add(Boton_Instrucciones);
         
-        Boton_Ranking = new JButton ("RANKING");
+        Boton_Ranking = new JButton ("Ranking");
         Boton_Ranking.setBounds(170, 265, 150, 50);
+        Boton_Ranking.setBackground(Color.BLUE);
+        Boton_Ranking.setForeground(Color.BLACK);
+        Boton_Ranking.setFont(new Font("Cooper black",0,16)); 
+        Boton_Ranking.setBorder(createRaisedBevelBorder());
         panelA.add(Boton_Ranking);
         
-        Boton_Creditos = new JButton ("CREDITOS");
+        Boton_Creditos = new JButton ("Creditos");
         Boton_Creditos.setBounds(170, 335, 150, 50);
+        Boton_Creditos.setBackground(Color.BLUE);
+        Boton_Creditos.setForeground(Color.BLACK);
+        Boton_Creditos.setFont(new Font("Cooper black",0,16));
+        Boton_Creditos.setBorder(createRaisedBevelBorder());
         panelA.add(Boton_Creditos);
         
         //CREANDO EVENTOS DE BOTONES...........

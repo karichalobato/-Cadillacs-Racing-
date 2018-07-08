@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.ImageIcon;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -39,7 +39,7 @@ public class VentanaC extends JFrame {
         //this.setIconImage(icono.getImage());
         try {
             
-            String url = "jdbc:mysql://localhost:3306/registrousuarios";
+            String url = "jdbc:mysql://localhost:3306/registroUsuario";
             String usuario = "root";
             String contraseña = "chatamaria";  
             

@@ -25,36 +25,32 @@ import javax.swing.JPanel;
 public class VentanaD extends JFrame{
     public Image imagenFondo;
     public URL fondoA;
-    JLabel eti_Creditos;
+    
     JButton Boton_Inicio;
     
     public VentanaD (){ //Constructor ventana D.
         //CREANDO ESPECIFICACIONES DE VENTANA D.
-        this.setSize(500, 500);//Estableciendo tamaño de la venta D.
+        this.setSize(700, 500);//Estableciendo tamaño de la venta D.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("CREDITOS"); //Estableciendo titulo de la Venta D.
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana C automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA D.
-        fondoA = this.getClass().getResource("Fondo.png");
+        fondoA = this.getClass().getResource("Creditos.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelD);
         panelD.setLayout(null);//Estamos desactivando el diseño del panel.
         
         //CREANDO ETIQUETA DE NOMBRE DE LA PANTALLA.
-        eti_Creditos = new JLabel("Creditos");
-        eti_Creditos.setBounds(145, 25, 300, 40);
-        eti_Creditos.setForeground(Color.WHITE);
-        eti_Creditos.setFont( new Font( "Cooper Black", Font.BOLD, 40 ) );
-        panelD.add(eti_Creditos);
+        
         
         //CREANDO BOTONES DE VENTANA D.
         Boton_Inicio = new JButton ("Inicio");
-        Boton_Inicio.setBounds(370, 425, 105, 40);
-        Boton_Inicio.setBackground(Color.GREEN);
-        Boton_Inicio.setForeground(Color.BLACK);
+        Boton_Inicio.setBounds(550, 425, 105, 40);
+        Boton_Inicio.setBackground(Color.BLACK);
+        Boton_Inicio.setForeground(Color.RED);
         Boton_Inicio.setFont(new Font("Cooper black",0,16));  
         Boton_Inicio.setBorder(createRaisedBevelBorder());
         panelD.add(Boton_Inicio);

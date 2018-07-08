@@ -180,7 +180,7 @@ public class Usuarios extends JFrame {
         else {
         try {
            
-            String url = "jdbc:mysql://localhost:3306/registrousuarios";
+            String url = "jdbc:mysql://localhost:3306/registroUsuario";
             String usuario = "root";
             String contraseña = "chatamaria";
             

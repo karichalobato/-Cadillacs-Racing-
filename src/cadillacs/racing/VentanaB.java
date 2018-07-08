@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static javax.swing.BorderFactory.createRaisedBevelBorder;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /**
@@ -23,8 +24,8 @@ import javax.swing.JPanel;
 public class VentanaB extends JFrame{
     public Image imagenFondo;
     public URL fondoA;
-    JLabel eti_Instrucciones;
-    JButton Boton_Atras, Boton_Siguiente, Boton_Inicio;
+    
+    JButton Boton_Inicio;
     
     public VentanaB (){ //Constructor ventana B.
         //CREANDO ESPECIFICACIONES DE VENTANA B.
@@ -35,30 +36,20 @@ public class VentanaB extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana B automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA B.
-        fondoA = this.getClass().getResource("ImagenA.jpg");
+        fondoA = this.getClass().getResource("Instrucciones.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelB);
         panelB.setLayout(null);//Estamos desactivando el diseño del panel.
         
-        //CREANDO ETIQUETA DE NOMBRE DE PANTALLA.
-        eti_Instrucciones= new JLabel("Instrucciones");
-        eti_Instrucciones.setBounds(265, 10, 300, 34);
-        eti_Instrucciones.setForeground(Color.WHITE);
-        eti_Instrucciones.setFont( new Font( "Bookman old style", Font.BOLD, 26 ) );
-        panelB.add(eti_Instrucciones);
+        //JBUTTON
         
-        //CREANDO BOTONES DE VENTANA B.
-        Boton_Atras = new JButton ("Atrás");
-        Boton_Atras.setBounds(100, 350, 150, 50);//Colocando el boton en las cordenadas que yo deseo y el tamaño que lo deseo.
-        panelB.add(Boton_Atras);
-        
-        Boton_Siguiente = new JButton ("Siguiente");
-        Boton_Siguiente.setBounds(400, 350, 150, 50);
-        panelB.add(Boton_Siguiente);
-        
-        Boton_Inicio = new JButton ("INICIO");
+        Boton_Inicio = new JButton ("Inicio");
         Boton_Inicio.setBounds(575, 425, 100, 25);
+        Boton_Inicio.setBackground(Color.BLACK);
+        Boton_Inicio.setForeground(Color.WHITE);
+        Boton_Inicio.setFont(new Font("Cooper black",0,16));  
+        Boton_Inicio.setBorder(createRaisedBevelBorder());
         panelB.add(Boton_Inicio);
         
         //CREANDO EVENTOS DE BOTONES...........

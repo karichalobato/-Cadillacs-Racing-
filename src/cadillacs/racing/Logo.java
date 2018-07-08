@@ -31,24 +31,24 @@ public class Logo extends JFrame{
     JButton Boton_Inicio;
 
     public Logo() {
-        this.setSize(600, 500);//Estableciendo tamaño de la venta A3.
+        this.setSize(700, 500);//Estableciendo tamaño de la venta A3.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("LOGO"); //Estableciendo titulo de la Venta A3.
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A2 automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A3.
-        fondoA = this.getClass().getResource("Fondo juego 2.png");
+        fondoA = this.getClass().getResource("logo.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelLogo);
         panelLogo.setLayout(null);//Estamos desactivando el diseño del panel.
         
         //JBUTTON
-        Boton_Inicio = new JButton ("Siguiente");
-        Boton_Inicio.setBounds(225, 400, 150, 50);//Colocando el boton en las cordenadas que yo deseo y el tamaño que lo deseo.
-        Boton_Inicio.setBackground(Color.GREEN);
-        Boton_Inicio.setForeground(Color.BLACK);
+        Boton_Inicio = new JButton ("Jugar");
+        Boton_Inicio.setBounds(275, 400, 150, 50);//Colocando el boton en las cordenadas que yo deseo y el tamaño que lo deseo.
+        Boton_Inicio.setBackground(Color.BLACK);
+        Boton_Inicio.setForeground(Color.RED);
         Boton_Inicio.setFont(new Font("Cooper black",0,16));  
         Boton_Inicio.setBorder(createRaisedBevelBorder());
         panelLogo.add(Boton_Inicio);

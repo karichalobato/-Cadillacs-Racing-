@@ -30,6 +30,7 @@ public class VentanaA1 extends JFrame{
     
     public VentanaA1 (){ //Constructor ventana A1.
         //CREANDO ESPECIFICACIONES DE VENTANA A1.
+        System.out.println("VENTANA A1");
         this.setSize(700, 500);//Estableciendo tamaño de la venta A1.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("MI JUEGO"); //Estableciendo titulo de la Venta A1.
@@ -37,7 +38,7 @@ public class VentanaA1 extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A1 automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A1.
-        fondoA = this.getClass().getResource("Fondo_Mijuego.png");
+        fondoA = this.getClass().getResource("camarozl2.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelA1);
@@ -45,7 +46,7 @@ public class VentanaA1 extends JFrame{
         
         //CREANDO ETIQUETA DE NOMBRE DE LA PANTALLA.
         eti_MiJuego= new JLabel("Mi juego");
-        eti_MiJuego.setBounds(290, 10, 300, 40);
+        eti_MiJuego.setBounds(280, 10, 300, 40);
         eti_MiJuego.setForeground(Color.WHITE);
         eti_MiJuego.setFont( new Font( "Cooper Black", Font.BOLD, 40 ) );
         panelA1.add(eti_MiJuego);

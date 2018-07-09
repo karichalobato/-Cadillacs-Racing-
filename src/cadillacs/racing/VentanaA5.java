@@ -10,5 +10,8 @@ package cadillacs.racing;
  * @author Karicha Valesska Romero Lobato <00002517@uca.edu.sv>
  */
 public class VentanaA5 {
+    public VentanaA5(){
+        System.out.println("VENTANA A5");
+    }
     
 }

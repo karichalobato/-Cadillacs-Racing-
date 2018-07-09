@@ -5,9 +5,9 @@
  */
 package cadillacs.racing;
 
-import usuarios.Usuarios;
-
-
+import cadillacs.racing.Logo;
+import cadillacs.racing.Sonido;
+import java.applet.AudioClip;
 
 /**
  *
@@ -18,10 +18,17 @@ public class CadillacsRacing {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        
-        Logo logo = new Logo();
-        logo.setVisible(true);
-    }
     
+    
+    
+    public static void main(String[] args) {
+        Logo logo = new Logo();
+        Sonido au = new Sonido();
+        au.start();
+        logo.setVisible(true);
+        
+       
+        
+    }
+       
 }

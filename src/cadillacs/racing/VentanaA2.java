@@ -29,6 +29,7 @@ public class VentanaA2 extends JFrame{
     
     public VentanaA2 (){ //Constructor ventana A2.
         //CREANDO ESPECIFICACIONES DE VENTANA A2.
+        System.out.println("VENTANA A2");
         this.setSize(700, 500);//Estableciendo tamaño de la venta A2.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("TIENDA"); //Estableciendo titulo de la Venta A2.
@@ -36,7 +37,7 @@ public class VentanaA2 extends JFrame{
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);//Cuando cierre la ventana A2 automaticamente se terminara el programa.
         
         //COLOCANDO IMAGEN DE FONDO EN VENTA A2.
-        fondoA = this.getClass().getResource("Fondo_Mijuego.png");
+        fondoA = this.getClass().getResource("charger.jpg");
         imagenFondo = new ImageIcon(fondoA).getImage();
         Container contenedor = getContentPane();
         contenedor.add(panelA2);

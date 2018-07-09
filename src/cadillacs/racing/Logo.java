@@ -5,6 +5,7 @@
  */
 package cadillacs.racing;
 
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -29,8 +30,11 @@ public class Logo extends JFrame{
     public Image imagenFondo;
     public URL fondoA;
     JButton Boton_Inicio;
+    AudioClip audio;
 
     public Logo() {
+//        audio  = java.applet.Applet.newAudioClip(getClass().getResource("/cadillacs/racing/gta2.wav"));
+//        audio.loop();
         this.setSize(700, 500);//Estableciendo tamaño de la venta A3.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("LOGO"); //Estableciendo titulo de la Venta A3.

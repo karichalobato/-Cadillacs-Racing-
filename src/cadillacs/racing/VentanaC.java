@@ -57,7 +57,7 @@ public class VentanaC extends javax.swing.JFrame {
                    fila[1] = rs.getString("nombre");
                    fila[2] = rs.getString("nickname");
                    fila[3] = rs.getString("pass");
-                   fila[4] = rs.getString("puntaje");
+                   
                    
                    modelo.addRow(fila);     
                }

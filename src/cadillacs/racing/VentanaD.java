@@ -30,6 +30,7 @@ public class VentanaD extends JFrame{
     
     public VentanaD (){ //Constructor ventana D.
         //CREANDO ESPECIFICACIONES DE VENTANA D.
+        System.out.println("VENTANA D");
         this.setSize(700, 500);//Estableciendo tamaño de la venta D.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("CREDITOS"); //Estableciendo titulo de la Venta D.

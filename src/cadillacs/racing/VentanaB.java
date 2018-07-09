@@ -29,6 +29,7 @@ public class VentanaB extends JFrame{
     
     public VentanaB (){ //Constructor ventana B.
         //CREANDO ESPECIFICACIONES DE VENTANA B.
+        System.out.println("VENTANA B");
         this.setSize(700, 500);//Estableciendo tamaño de la venta B.
         this.setLocationRelativeTo(null);//Centrando ventana en la pantalla.
         this.setTitle("INSTRUCCIONES"); //Estableciendo titulo de la Venta B.
